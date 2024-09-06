@@ -7,10 +7,10 @@ nextflow.enable.dsl = 2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-def summary_params = NfcoreSchema.paramsSummaryMap(workflow, params)
+//def summary_params = NfcoreSchema.paramsSummaryMap(workflow, params)
 
 // Validate input parameters
-WorkflowGmsemu.initialise(params, log)
+//WorkflowGmsemu.initialise(params, log)
 
 // TODO nf-core: Add all file path parameters for the pipeline to the list below
 // Check input path parameters to see if they exist
@@ -226,6 +226,7 @@ workflow GMSEMU {
         ch_versions.unique().collectFile(name: 'collated_versions.yml')
     )
 
+/*
     //
     // MODULE: MultiQC Preproccessed
     //
@@ -252,7 +253,7 @@ workflow GMSEMU {
     )
     multiqc_report = MULTIQC.out.report.toList()
 
-
+*/
 }
 
 
